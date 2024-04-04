@@ -1,0 +1,19 @@
+<p>detail-faculty works!</p>
+
+<h1>{{ data.FacultyName }}</h1>
+
+<img [src]="data.FacultyImage" />
+<br/>
+<a class="btn btn-primary" routerLink="../../faculty">Back</a>
+<button class="btn btn-danger" (click)="deleteFac(data.id)">Delete</button>
+<a class="btn btn-warning" routerLink="../../faculty/edit/{{data.id}}">Edit</a>
+
+<br/><br/>
+<button class="btn btn-danger"
+  [swal]="{ title: 'Are you sure you want to delet', showCancelButton: true }"
+  (confirm)="deleteFac(data.id)"
+  (deny)="handleDenial()"
+  (dismiss)="handleDenial()">
+
+  Delete SA2
+</button>

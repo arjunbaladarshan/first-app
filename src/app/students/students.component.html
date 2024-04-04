@@ -1,1 +1,19 @@
-<p>students updated work works!</p>
+<div class="row">
+    <div class="col mb-3">
+        <input type="text" placeholder="enter name" [(ngModel)]="tempFac.FacultyName"/>
+        <input type="text" placeholder="enter initial" [(ngModel)]="tempFac.FacultyInitial"/>
+        <input type="text" placeholder="enter image"  [(ngModel)]="tempFac.FacultyImage"/>
+        <button *ngIf="idToUpdate<0" class="btn btn-primary" (click)="addFaculty()">Add Faculty</button>
+        <button *ngIf="idToUpdate>-1" class="btn btn-primary" (click)="editFaculty()">Edit Faculty</button>
+    </div>
+</div>
+<div class="row">
+    <div class="card col-3" *ngFor="let stu of students; let i=index">
+        <img [src]="stu.FacultyImage" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{ stu.FacultyName }}</h5>
+            <p class="card-text">{{ stu.FacultyInitial }}</p>
+            <a href="#" class="btn btn-warning" (click)="setDataForEdit(i)">Edit</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+<form #myForm="ngForm" class="my-5" (ngSubmit)="save(myForm.value)">
+    <input type="text" name="FacultyName" [(ngModel)]="data.FacultyName"/>
+    <input type="text" name="FacultyImage" [(ngModel)]="data.FacultyImage"/>
+    <button *ngIf="id==0">Add</button>
+    <button *ngIf="id>0">Edit</button>    
+</form>
